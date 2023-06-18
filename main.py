@@ -71,4 +71,18 @@ if __name__ == '__main__':
             optimizer.step()
         print(loss)
 
-    print("...End")
+    correct = 0
+    total = 0
+
+    with torch.no_grad():
+        for data in trainset:
+            X, y = data
+            output = net(X.view(-1, 28*28))
+            for idx, i in enumerate(output):
+                if torch.argmax(i) == y[idx]:
+                    correct += 1
+                total += 1
+
+    print("Accuracy: ", round(correct/total, 3) )
+
+    print("...End.")
