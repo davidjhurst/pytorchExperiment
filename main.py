@@ -25,7 +25,7 @@ class Net(nn.Module):
         # So it can be written as f(x)=max(0,x)
 
         x = F.relu(self.fc1(x))
-        x = F.relu(selfelf.fc2(x))
+        x = F.relu(self.fc2(x))
         x = F.relu(self.fc3(x))
         x = self.fc4(x)
 
@@ -71,4 +71,4 @@ if __name__ == '__main__':
             optimizer.step()
         print(loss)
 
-    print("End....ab branch1")
+    print("...End")
